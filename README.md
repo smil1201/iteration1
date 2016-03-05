@@ -1,8 +1,7 @@
-# angular-seed
-
-This project was generated with the [Angular Full-Stack Generator](https://github.com/DaftMonk/generator-angular-fullstack) version 3.3.0.
-
-## Getting Started
+<snippet>
+  <content><![CDATA[
+# ${1:Ulysses}
+A volunteer scheduling software for the MN Odyssey of the Mind tournement.
 
 ### Prerequisites
 
@@ -29,3 +28,28 @@ Run `grunt build` for building and `grunt serve` for preview.
 ## Testing
 
 Running `npm test` will run the unit tests with karma.
+
+
+## Contributing
+1. Fork it!
+2. Create your feature branch: `git checkout -b my-new-feature`
+3. Commit your changes: `git commit -am 'Add some feature'`
+4. Push to the branch: `git push origin my-new-feature`
+5. Submit a pull request :D
+
+## History
+This project was generated with the [Angular Full-Stack Generator](https://github.com/DaftMonk/generator-angular-fullstack) version 3.3.0.
+
+##Credits
+The first iteration of this Agile project was developed by Luke Raymond, Samuel Miller, Sean Stockholm, & Nate Perfetti 
+
+
+## License
+Write license
+
+]]></content>
+  <tabTrigger>readme</tabTrigger>
+</snippet>
+
+
+
