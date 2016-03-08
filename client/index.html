@@ -32,6 +32,25 @@
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
+
+    <!--begin csv to json test -->
+
+    <script src="client/components/csv-to-json/csv-to-json.js"> </script>
+
+    <form id="convertForm" name="convertForm">
+      <label for="csv"><acronym title="comma-separated values">CSV</acronym>:</label><br />
+      <textarea id="csv" name="csv" rows="10" cols="60"></textarea><br /><br />
+
+      <label for="json"><acronym title="JavaScript Object Notation">JSON</acronym>:</label><br />
+      <textarea id="json" name="json" rows="10" cols="60" readonly="readonly"></textarea><br /><br />
+
+      <input type="submit" value="Convert" /> <input type="reset" />
+    </form>
+
+
+    <!-- end csv to json test -->
+
+
     <!-- Add your site or application content here -->
     <navbar></navbar>
     <div ui-view=""></div>
