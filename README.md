@@ -45,7 +45,7 @@ The first iteration of this Agile project was developed by Luke Raymond, Samuel 
 
 
 ## License
-TODO: Write license
+Write license
 
 ]]></content>
   <tabTrigger>readme</tabTrigger>
