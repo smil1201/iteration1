@@ -1,9 +1,10 @@
-
-.custom-event {
-  color: #fff;
-  text-shadow: 0 1px 0 #000;
+table, th , td  {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
 }
-.custom-all-day-event {
-  text-align: center;
-  text-transform: uppercase
+
+ul {
+  clear: both;
+  list-style-type: none;
 }
