@@ -37,6 +37,13 @@
 
     <script src="client/components/csv-to-json/csv-to-json.js"> </script>
 
+
+    <!-- end csv to json test -->
+
+
+    <!-- Add your site or application content here -->
+    <navbar></navbar>
+    <div ui-view=""></div>
     <form id="convertForm" name="convertForm">
       <label for="csv"><acronym title="comma-separated values">CSV</acronym>:</label><br />
       <textarea id="csv" name="csv" rows="10" cols="60"></textarea><br /><br />
@@ -46,14 +53,6 @@
 
       <input type="submit" value="Convert" /> <input type="reset" />
     </form>
-
-
-    <!-- end csv to json test -->
-
-
-    <!-- Add your site or application content here -->
-    <navbar></navbar>
-    <div ui-view=""></div>
     <footer></footer>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
@@ -89,12 +88,14 @@
       <script src="app/app.js"></script>
       <!-- injector:js -->
       <script src="components/util/util.module.js"></script>
-      <script src="components/modal/modal.service.js"></script>
+      <script src="components/footer/footer.directive.js"></script>
       <script src="app/main/main.js"></script>
       <script src="app/scheduleView/scheduleView.controller.js"></script>
       <script src="app/scheduleView/scheduleView.js"></script>
-      <script src="components/footer/footer.directive.js"></script>
+      <script src="components/csv-to-json/csv-to-json.js"></script>
+      <script src="components/csv-to-json/my-csv-to-json.js"></script>
       <script src="app/main/main.controller.js"></script>
+      <script src="components/modal/modal.service.js"></script>
       <script src="components/navbar/navbar.controller.js"></script>
       <script src="components/navbar/navbar.directive.js"></script>
       <script src="components/socket/socket.service.js"></script>
