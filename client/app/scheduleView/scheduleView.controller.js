@@ -1,93 +1,51 @@
 'use strict';
 
-angular.module('angularSeedApp')
-  .controller('ScheduleViewCtrl', function ($scope) {
-    $scope.message = 'Hello';
-  });
+(function() {
 
+  class ScheduleViewCtrl {
 
-//helpful angular schedule example
-//http://docs.telerik.com/kendo-ui/AngularJS/introduction
-//http://demos.telerik.com/kendo-ui/scheduler/angular
+    constructor($http, $scope) {
+      self = this;
+      this.$http = $http;
+      this.times = [];
+      this.jobTitle = '';
+      this.jobs = ['FoodService', 'ScoreRoom', 'Entertainment'];
+    }
 
-/*
-angular.module("UlyssesApp", [ "kendo.directives" ])
-  .controller("MyCtrl", function($scope){
-    $scope.schedulerOptions = {
-      date: new Date("2013/6/13"),
-      startTime: new Date("2013/6/13 07:00 AM"),
-      height: 600,
-      views: [
-        "day",
-        { type: "workWeek", selected: true },
-        "week",
-        "month",
-      ],
-      timezone: "Etc/UTC",
-      dataSource: {
-        batch: true,
-        transport: {
-          read: {
-            url: "//demos.telerik.com/kendo-ui/service/tasks",
-            dataType: "jsonp"
-          },
-          update: {
-            url: "//demos.telerik.com/kendo-ui/service/tasks/update",
-            dataType: "jsonp"
-          },
-          create: {
-            url: "//demos.telerik.com/kendo-ui/service/tasks/create",
-            dataType: "jsonp"
-          },
-          destroy: {
-            url: "//demos.telerik.com/kendo-ui/service/tasks/destroy",
-            dataType: "jsonp"
-          },
-          parameterMap: function(options, operation) {
-            if (operation !== "read" && options.models) {
-              return {models: kendo.stringify(options.models)};
-            }
+  // END CONSTRUCTOR
+
+    generateTimes() {
+      var times = this.times;
+      var t = 0;
+      for(var i=9; i<= 17; i++) {
+        for(var j=0; j<6; j++) {
+          if(j==0){
+            times[t++]= (i + ':' + j*10 + "0");
+          } else {
+            times[t++]= (i + ':' + j*10);
           }
-        },
-        schema: {
-          model: {
-            id: "taskId",
-            fields: {
-              taskId: { from: "TaskID", type: "number" },
-              title: { from: "Title", defaultValue: "No title", validation: { required: true } },
-              start: { type: "date", from: "Start" },
-              end: { type: "date", from: "End" },
-              startTimezone: { from: "StartTimezone" },
-              endTimezone: { from: "EndTimezone" },
-              description: { from: "Description" },
-              recurrenceId: { from: "RecurrenceID" },
-              recurrenceRule: { from: "RecurrenceRule" },
-              recurrenceException: { from: "RecurrenceException" },
-              ownerId: { from: "OwnerID", defaultValue: 1 },
-              isAllDay: { type: "boolean", from: "IsAllDay" }
-            }
-          }
-        },
-        filter: {
-          logic: "or",
-          filters: [
-            { field: "ownerId", operator: "eq", value: 1 },
-            { field: "ownerId", operator: "eq", value: 2 }
-          ]
-        }//demos.telerik.com/kendo-ui/service/tasks
-      },
-      resources: [
-        {
-          field: "ownerId",
-          title: "Owner",
-          dataSource: [
-            { text: "Alex", value: 1, color: "#f8a398" },
-            { text: "Bob", value: 2, color: "#51a0ed" },
-            { text: "Charlie", value: 3, color: "#56ca85" }
-          ]
         }
-      ]//demos.telerik.com/kendo-ui/service/tasks
-    };
-  })
+      }
+      return(times);
+    }
 
-*/
+    //needs to be tied to the button in the html
+    addJob() {
+      var jobTitle = this.jobTitle;
+      var jobs = this.jobs;
+      jobs.push(jobTitle);
+      console.log(jobTitle);
+
+    }
+
+  }
+
+
+angular.module('angularSeedApp')
+  .controller('ScheduleViewCtrl', ScheduleViewCtrl);
+
+})();
+
+
+
+

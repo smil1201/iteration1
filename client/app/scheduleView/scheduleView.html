@@ -1,13 +1,30 @@
 
-<div>ScheduleView</div>
+<div class="container" ng-controller="ScheduleViewCtrl as SVC">
+  <div class="row">
+    <div class="col-lg-12">
+      <h1 class="page-header">Volunteer Schedule</h1>
 
-<!-- kendo html
-<div id="example" ng-app="UlyssesApp">
-  <div ng-controller="MyCtrl">
-    <div kendo-scheduler k-options="schedulerOptions">
-      <span k-event-template class='custom-event'>{{dataItem.title}}</span>
-      <div k-all-day-event-template class='custom-all-day-event'>{{dataItem.title}}</div>
+      <form name="jobForm">
+        <label>
+          Job Title:
+          <input type="text" name="jobTitle" ng-model="jobTitle" placeholder="Enter a Job"><br>
+        </label>
+          <input type="button" ng-click="SVC.addJob()" value="Add job to the Schedule"/>
+      </form>
+
+      <br>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Time</th>
+            <th ng-repeat="job in SVC.jobs track by $index"> {{ job }}</th>
+          </tr>
+        </thead>
+          <tr ng-repeat="time in SVC.generateTimes()">
+            <td>{{ time }}</td>
+          </tr>
+      </table>
     </div>
   </div>
-</div>
--->
+ </div>
